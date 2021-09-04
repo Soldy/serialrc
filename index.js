@@ -38,11 +38,12 @@ const serialBase = function(){
      * @return {integer}
     */
     const _get = function(name){
-        if (typeof name === 'string')
+        if (typeof name !== 'string')
             name = 'default';
         if (typeof _serials[name] === 'undefined')
-            return _serials[name] = 0;
-        return parseInt(_serials[name]++);
+            return _serials[name] = -1;
+        _serials[name]++;
+        return parseInt(_serials[name]);
     };
     /*
      * @param {string}

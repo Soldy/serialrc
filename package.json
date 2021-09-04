@@ -1,6 +1,6 @@
 {
   "name": "serialrc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "serial number generator",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,6 @@
     "url": "https://github.com/Soldy/serialrc/issues"
   },
   "devDependencies": {
-    "nanoTest": "^0.9.9-beta21"
+    "nanoTest": "^0.9.9-beta22"
   }
 }
