@@ -9,6 +9,21 @@
 
 const serialBase = function(){
     /*
+     * @param {object}
+     * @public 
+     * @return {boolean}
+    */
+    this.import = function(data){
+        return _import(data);
+    };
+    /*
+     * @public 
+     * @return {object}
+    */
+    this.export = function(){
+        return _export();
+    };
+    /*
      * @param {string}
      * @public 
      * @return {integer}
@@ -40,6 +55,31 @@ const serialBase = function(){
      * var {object}
      */
     const _serials = {};
+    /*
+     * @param {object}
+     * @public 
+     * @return {boolean}
+    */
+    const _import = function(data){
+        for(let name in data)
+            if(
+                (typeof name === 'string')&&
+                (typeof data[name] ==='number') && 
+                ((data[name]%1)===0)
+            )
+                _serials[name.toString()] = parseInt(data[name]);
+        return _import(data);
+    };
+    /*
+     * @public 
+     * @return {object}
+    */
+     const _export = function(){
+         let out = {};
+         for(let name in _serials)
+             out[name.toString()] = parseInt(_serials[name]);
+         return out;
+    };
     /*
      * @param {string}
      * @private
