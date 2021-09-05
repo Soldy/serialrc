@@ -1,63 +1,15 @@
 /*
- *  @Soldy\tickrc\2021.02.07\GPL3
+ *  @Soldy\confrc\2021.02.04\GPL3
  */
 'use strict';
-
-/*
- * @prototype
- */
-
-const serialBase = function(){
-    /*
-     * @param {string}
-     * @public 
-     * @return {integer}
-    */
-    this.serial = function(name){
-        return _get(name);
-    };
-    /*
-     * @param {string}
-     * @public 
-     * @return {string}
-    */
-    this.id = function(name){
-        return _id(name);
-    };
-    /*
-     * var {string}
-     */
-    const _time_string = (Date.now()).toString(32);
-    /*
-     * var {object}
-     */
-    const _serials = {};
-    /*
-     * @param {string}
-     * @private
-     * @return {integer}
-    */
-    const _get = function(name){
-        if (typeof name !== 'string')
-            name = 'default';
-        if (typeof _serials[name] === 'undefined')
-            return _serials[name] = -1;
-        _serials[name]++;
-        return parseInt(_serials[name]);
-    };
-    /*
-     * @param {string}
-     * @private
-     * @return {string}
-    */
-    const _id = function(name){
-        return (
-            _get(name).toString(32)+
-            '-'+
-            _time_string
-        );
-    };
-};
+if(typeof  global.theUn1v3rse === 'undefined')
+    require('theuniverse');
+const $universe = global.theUn1v3rse.controls.interface();
 
 
-exports.base = serialBase;
+if(!$universe.baseCheck('confrc')){
+    const $serialrc = new (require('./serialrc.js')).base();
+    $universe.baseAdd('serialrc', $serialrc);
+}
+
+exports.base = $universe.baseGet('serialrc');
