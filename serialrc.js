@@ -1,5 +1,5 @@
 /*
- *  @Soldy\tickrc\2021.02.07\GPL3
+ *  @Soldy\serialrc\2021.02.07\GPL3
  */
 'use strict';
 

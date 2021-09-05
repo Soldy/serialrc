@@ -1,5 +1,5 @@
 /*
- *  @Soldy\confrc\2021.02.04\GPL3
+ *  @Soldy\serialrc\2021.02.07\GPL3
  */
 'use strict';
 if(typeof  global.theUn1v3rse === 'undefined')
