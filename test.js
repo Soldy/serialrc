@@ -110,4 +110,59 @@ nanoTest.add(
     {'default':3,'n':3}
 );
 
+nanoTest.add(
+    'import test',
+    {
+        'function':$serial.import,
+        'options':[{'default':8,'n':7}]
+    },
+    '===',
+    true
+);
+
+nanoTest.add(
+    'get a default',
+    {
+        'function':$serial.get,
+        'options':[]
+    },
+    '===',
+    9
+);
+
+
+nanoTest.add(
+    'get a default',
+    {
+        'function':$serial.serial,
+        'options':[]
+    },
+    '===',
+    10
+);
+
+
+nanoTest.add(
+    'get with name',
+    {
+        'function':$serial.get,
+        'options':['n']
+    },
+    '===',
+    8
+);
+
+
+nanoTest.add(
+    'get with name',
+    {
+        'function':$serial.serial,
+        'options':['n']
+    },
+    '===',
+    9
+);
+
+
+
 nanoTest.run();

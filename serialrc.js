@@ -68,7 +68,7 @@ const serialBase = function(){
                 ((data[name]%1)===0)
             )
                 _serials[name.toString()] = parseInt(data[name]);
-        return _import(data);
+        return true;
     };
     /*
      * @public 
