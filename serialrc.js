@@ -89,9 +89,18 @@ const serialBase = function(){
         if (typeof name !== 'string')
             name = 'default';
         if (typeof _serials[name] === 'undefined')
-            return parseInt(_serials[name] = 0);
+            return _create(name);
         _serials[name]++;
         return parseInt(_serials[name]);
+    };
+    /*
+     * @param {string}
+     * @private
+     * @return {integer}
+    */
+    const _create = function(name){
+        _serials[name] = 0;
+        return 0;
     };
     /*
      * @param {string}
