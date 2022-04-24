@@ -1,4 +1,7 @@
-const nanoTest  = new (require('nanoTest')).test();
+const nanoTest  = new (require('nanoTest')).test({
+    'progress_bar':false,   
+    'debug_print':'short'
+});
 const $serial = require('./index.js').base;
 
 nanoTest.add(
