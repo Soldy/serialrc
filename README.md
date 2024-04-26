@@ -1,4 +1,4 @@
-#Serialrc
+# Serialrc
 
 Ultra simple serial number generator
 
